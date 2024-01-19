@@ -1,0 +1,12 @@
+.my-icon {
+  color: deeppink;
+  stroke: deeppink;
+  fill: deeppink;
+  background-color: aqua;
+}
+
+.icon-plane {
+  color: gold;
+  /* stroke: gold;
+  fill: gold; */
+}

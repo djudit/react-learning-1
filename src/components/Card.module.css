@@ -1,0 +1,44 @@
+.card {
+  margin: 8px;
+  padding: 12px 16px;
+  border-radius: 4px;
+  background-color: gray;
+  color: darkslategray;
+  width: 70%;
+}
+
+.info {
+  composes: card;
+  background-color: blue;
+}
+
+.success {
+  composes: card;
+  background-color: green;
+}
+
+.error {
+  composes: card;
+  background-color: red;
+}
+
+.warning {
+  composes: card;
+  background-color: orange;
+}
+
+.card.isOutlined {
+  outline: 2px solid black;
+}
+
+.card.isElevated {
+  box-shadow: rgb(0 0 0 / 20%) 0px 3px 3px -2px, rgb(0 0 0 / 14%) 0px 3px 4px 0px,
+    rgb(0 0 0 / 12%) 0px 1px 8px 0px;
+}
+
+.iconCard {
+  color: lime;
+  /* stroke: lime;
+  fill: lime; */
+  background-color: sandybrown;
+}

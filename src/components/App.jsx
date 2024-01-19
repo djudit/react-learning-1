@@ -1,4 +1,5 @@
 import { Product } from './Product';
+import './App.css';
 
 export default function App() {
   return (

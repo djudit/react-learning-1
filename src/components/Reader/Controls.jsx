@@ -1,4 +1,4 @@
-export const Article = ({ onPrev, onNext, isPrevDisabled, isNextDisabled }) => {
+export const Controls = ({ onPrev, onNext, isPrevDisabled, isNextDisabled }) => {
   return (
     <div>
       <button onClick={onPrev} disabled={isPrevDisabled}>

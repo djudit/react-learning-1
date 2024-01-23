@@ -93,3 +93,57 @@ export default function App() {
 //     </div>
 //   );
 // }
+
+// -----------------------------------------------------------
+// Модуль2 Заняття 2
+
+// import { useState, useEffect } from 'react';
+
+// const getInitialClicks = () => {
+//   const savedClicks = window.localStorage.getItem('number-of-clicks');
+//   // console.log(typeof JSON.parse(savedClicks));
+
+//   if (savedClicks !== null) {
+//     return JSON.parse(savedClicks);
+//   }
+//   return 0;
+// };
+
+// export default function App() {
+//   const [clicks, setClicks] = useState(getInitialClicks);
+
+//   const [date, setDate] = useState(Date.now());
+
+//   useEffect(() => {
+//     console.log('MOUNT EFFECT');
+//   }, []);
+
+//   useEffect(() => {
+//     console.log('code inside useEffect', clicks);
+//     window.localStorage.setItem('number-of-clicks', clicks);
+//   }, [clicks]);
+
+//   useEffect(() => {
+//     console.log('Log, when date state changes ', date);
+//   }, [date]);
+
+//   // useEffect(() => {
+//   //   console.log('Effect on mount');
+
+//   //   const id = setInterval(() => {
+//   //     console.log(Date.now());
+//   //   }, 20000);
+
+//   //   return () => {
+//   //     console.log('effecr cleanup');
+//   //     clearInterval(id);
+//   //   };
+//   // }, []);
+
+//   return (
+//     <>
+//       <button onClick={() => setClicks(clicks + 1)}>Clicks: {clicks}</button>
+//       <button onClick={() => setDate(Date.now())}>Date: {date}</button>
+//     </>
+//   );
+// }

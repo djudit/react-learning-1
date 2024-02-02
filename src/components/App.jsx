@@ -1,10 +1,44 @@
 import { Product } from './Product';
 import { Button } from './Button/Button';
 import { Reader } from './Reader/Reader';
+// import { PaymentForm } from './PaymentForm';
 import articles from '../../articles.json';
 import './App.css';
+import { useId, useState } from 'react';
+import { Filter } from './Filter';
+import { Users } from './Users';
+import { UserForm } from './UserForm';
 
 export default function App() {
+  const [nameFilter, setnameFilter] = useState('');
+  const [users, setUsers] = useState([
+    { username: 'Jacob', access: 'r', id: 85154 },
+    { username: 'Mango', access: 'w', id: 90365 },
+    { username: 'Elena', access: 'r', id: 17056 },
+    { username: 'Orlando', access: 'm', id: 34108 },
+    { username: 'Gimli', access: 'w', id: 92558 },
+  ]);
+
+  const addUser = newUser => {
+    setUsers(prevUsers => {
+      return [...prevUsers, { username: newUser, id: Date.now() }];
+    });
+  };
+
+  const deleteUser = userId => {
+    setUsers(prevUsers => {
+      return prevUsers.filter(user => user.id !== userId);
+    });
+  };
+
+  const visibleUsers = users.filter(user =>
+    user.username.toLowerCase().includes(nameFilter.toLowerCase())
+  );
+
+  // const makePayment = options => {
+  //   console.log('makePayment: ', options);
+  // };
+
   return (
     <div>
       <h1>Best selling</h1>
@@ -25,6 +59,13 @@ export default function App() {
       <Button />
 
       <Reader items={articles} />
+
+      {/* <PaymentForm onSubmit={makePayment} /> */}
+
+      <UserForm onAdd={addUser} />
+      <hr />
+      <Filter value={nameFilter} onChange={setnameFilter} />
+      <Users items={visibleUsers} onDelete={deleteUser} />
     </div>
   );
 }
